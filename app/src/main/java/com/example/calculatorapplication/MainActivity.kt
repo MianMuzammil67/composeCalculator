@@ -26,12 +26,16 @@ class MainActivity : ComponentActivity() {
                 Calculator(
                     state = state,
                     onAction = viewModel::onAction,
+                    spacing = buttonSpacing,
                      modifier = Modifier
                          .fillMaxSize()
                          .background(MediumGray)
                          .padding(16.dp)
 
+
                 )
+
+
             }
         }
     }

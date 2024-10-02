@@ -25,9 +25,9 @@ import com.example.calculatorapplication.ui.theme.Orange
 @Composable
 fun Calculator(
     state: CalculatorState,
-    spacing: Dp = 8.dp,
     modifier: Modifier = Modifier,
-    onAction :(CalculatorAction)-> Unit
+    spacing: Dp = 8.dp,
+    onAction: (CalculatorAction) -> Unit
 
 ) {
     Box(modifier = modifier) {
@@ -39,25 +39,26 @@ fun Calculator(
 
         ) {
             Text(
-                text = state.number1 + (state.operation ?: "") + state.number2,
+                text = state.number1 + (state.operation?.symbol ?: "") + state.number2,
                 textAlign = TextAlign.End,
-                modifier =  Modifier
+                modifier = Modifier
                     .fillMaxWidth()
-                    .padding(32.dp),
+                    .padding(vertical = 32.dp),
                 fontWeight = FontWeight.Light,
                 fontSize = 80.sp,
                 color = Color.White,
                 maxLines = 2
 
             )
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(spacing)
-            ){
+            ) {
                 CalculatorButton(
                     symbol = "AC",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(LightGray)
                         .aspectRatio(2f)
                         .weight(2f),
@@ -69,7 +70,7 @@ fun Calculator(
 
                 CalculatorButton(
                     symbol = "Del",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(LightGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -80,7 +81,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "/",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -90,17 +91,16 @@ fun Calculator(
                     }
 
                 )
-
             }
 
             Row(
                 modifier = Modifier
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(spacing)
-            ){
+            ) {
                 CalculatorButton(
                     symbol = "7",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -111,7 +111,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "8",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -123,7 +123,7 @@ fun Calculator(
 
                 CalculatorButton(
                     symbol = "9",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -134,7 +134,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "X",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -151,10 +151,10 @@ fun Calculator(
                 modifier = Modifier
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(spacing)
-            ){
+            ) {
                 CalculatorButton(
                     symbol = "4",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -165,7 +165,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "5",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -177,7 +177,7 @@ fun Calculator(
 
                 CalculatorButton(
                     symbol = "6",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -188,7 +188,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "-",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -205,10 +205,10 @@ fun Calculator(
                 modifier = Modifier
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(spacing)
-            ){
+            ) {
                 CalculatorButton(
                     symbol = "1",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -219,7 +219,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "2",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -231,7 +231,7 @@ fun Calculator(
 
                 CalculatorButton(
                     symbol = "3",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -242,7 +242,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "+",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -259,10 +259,10 @@ fun Calculator(
                 modifier = Modifier
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(spacing)
-            ){
+            ) {
                 CalculatorButton(
                     symbol = "0",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(2f)
                         .weight(2f),
@@ -273,7 +273,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = ".",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(DarkGray)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -284,7 +284,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "=",
-                    modifier = modifier
+                    modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
                         .weight(1f),
@@ -295,10 +295,8 @@ fun Calculator(
 
                 )
 
+
             }
-
-
-
 
         }
 
