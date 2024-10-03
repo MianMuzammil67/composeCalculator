@@ -16,7 +16,7 @@ import com.example.calculatorapplication.ui.theme.MediumGray
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+//        enableEdgeToEdge()
         setContent {
             CalculatorApplicationTheme {
                 val viewModel = viewModel<CalculatorViewModel>()
